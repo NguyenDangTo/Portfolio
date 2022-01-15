@@ -1,0 +1,809 @@
+:root {
+  --primary-color: #fff;
+  --sub-primary-color: #e7e7e7;
+  --secondary-color: #000;
+  --sub-secondary-color: #221f25;
+  --navbar-color: #f5f5db;
+  --fourth-color: #ff0066;
+  --fifth-color: #91ee91;
+  --sixth-color: #ffff64;
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #16191e;
+  position: fixed;
+}
+.spinner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 18px solid #16181e;
+  border-top-color: #4285f4;
+  animation: rotator 1.4s linear infinite forwards, colors 1.4s linear infinite forwards;
+}
+@keyframes rotator {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes colors {
+  0% {
+    border-top-color: #4285f4;
+  }
+  25% {
+    border-top-color: #de3e35;
+  }
+  50% {
+    border-top-color: #f7c223;
+  }
+  75% {
+    border-top-color: #1b9a59;
+  }
+  100% {
+    border-top-color: #4285f4;
+  }
+}
+
+.main-page {
+  display: none;
+}
+/* End Loading */
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* NavBar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--red-color);
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  justify-content: space-between;
+  z-index: 999;
+}
+.navbar.active {
+  background-color: var(--navbar-color);
+  color: var(--secondary-color);
+  box-shadow: 1px 0 15px 1px #888888;
+}
+.navbar.active .navbar-logo a,
+.navbar.active .navbar-menu li a {
+  color: var(--secondary-color);
+}
+.navbar .navbar-logo a {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 2.1rem;
+  font-family: "Ubuntu", sans-serif;
+}
+.navbar .navbar-menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.navbar .navbar-menu .navbar-link {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;
+  cursor: pointer;
+}
+.navbar .navbar-menu .navbar-link:hover a,
+.navbar-menu_open-btn:hover {
+  color: var(--fourth-color);
+}
+
+.navbar .navbar-menu .navbar-link a {
+  height: 60px;
+  font-weight: 600;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+}
+.navbar.active .navbar-link.active a {
+  color: var(--fourth-color);
+}
+.navbar .navbar-menu .navbar-link:hover,
+.navbar.active .navbar-menu_open-btn:hover {
+  color: var(--fourth-color);
+}
+.navbar-menu_open-btn {
+  width: 80px;
+  height: 60px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.navbar.active .navbar-menu_open-btn {
+  color: var(--secondary-color);
+}
+.navbar.active .navbar-menu_open-btn.active {
+  color: var(--fourth-color);
+}
+/* Main Container */
+.main-container {
+  overflow: hidden;
+}
+.main-container.filter {
+  filter: brightness(0.35);
+}
+.section {
+  position: relative;
+  display: flex;
+}
+
+/* Home Section  */
+.home-section {
+  background-image: url(./assets/imgs/picture1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.profile_description {
+  color: var(--primary-color);
+  height: 15rem;
+  width: 28rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 1rem;
+  margin-left: 15%;
+  margin-right: auto;
+}
+.profile_description .profile_text-1 {
+  font-size: 1.8rem;
+  font-family: "Ubuntu", sans-serif;
+}
+.profile_description .profile_text-2 {
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: "Ubuntu", sans-serif;
+}
+.profile_description .profile_text-3 {
+  font-size: 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+}
+/* About Section  */
+.about-section {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 6rem;
+  padding-top: 6rem;
+}
+.about-title {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 5rem;
+  font-weight: 600;
+  position: relative;
+  color: var(--fourth-color);
+}
+.about-title::after {
+  content: "";
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  right: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+.about-title::before {
+  content: "Who am i";
+  position: absolute;
+  font-size: 2rem;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 0.8rem;
+  right: 0;
+  background-color: var(--primary-color);
+  object-fit: cover;
+  z-index: 100;
+  width: fit-content;
+  color: var(--fourth-color);
+}
+.about-description {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 10;
+}
+.about__left {
+  position: relative;
+  width: 400px;
+  z-index: 3;
+}
+.about__img-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fourth-color);
+  border-radius: 63% 40% 54% 46% / 55% 48% 52% 45%;
+  overflow: hidden;
+}
+.about__img-container .about__img {
+  width: 310px;
+  height: 450px;
+  position: relative;
+}
+.about__img::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  min-height: 200px;
+  min-width: 200px;
+  width: 400px;
+  height: 400px;
+  background-color: var(--fourth-color);
+  background-size: 1600% 1600%;
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  border-radius: 63% 40% 54% 46% / 55% 48% 52% 45%;
+}
+
+.about__right {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.about__right .about_text-1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.about__right .about_text-1 span {
+  color: var(--fourth-color);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.2rem;
+}
+.about__right .about_text-2 {
+  font-size: 1rem;
+}
+/* Knowledge Section  */
+.knowledge-section {
+  background-color: var(--sub-primary-color);
+  color: var(--primary-color);
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skill-title {
+  color: var(--fourth-color);
+  text-align: center;
+  width: 100%;
+  margin-bottom: 4rem;
+  font-size: 2.3rem;
+  font-family: "Ubuntu", sans-serif;
+}
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.skill-list .skill-item {
+  width: 40%;
+  padding: 1rem;
+  margin: 1rem;
+  position: relative;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 0 30px 2px #bcaeae;
+}
+.skill-item .skill-item__title {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: "Ubuntu", sans-serif;
+  color: var(--fourth-color);
+  font-weight: 600;
+}
+.skill-item .skill-item__description {
+  width: 80%;
+  margin: 2rem auto;
+}
+.skill-list .skill-item .logo {
+  width: 50px;
+  position: absolute;
+}
+#html-logo,
+#react-logo {
+  left: -5%;
+  top: -10%;
+  transform: rotate(-40deg);
+  width: 70px;
+}
+#bootstrap-logo {
+  left: -5%;
+  top: -10%;
+  transform: rotate(-40deg);
+  width: 80px;
+}
+#js-logo {
+  left: -5%;
+  top: -10%;
+  transform: rotate(-40deg);
+}
+#css-logo {
+  right: -5%;
+  top: -10%;
+  transform: rotate(40deg);
+}
+#sass-logo {
+  right: -5%;
+  top: -5%;
+  transform: rotate(40deg);
+  width: 70px;
+}
+#jquery-logo {
+  right: -5%;
+  top: -10%;
+  width: 65px;
+}
+
+/* Projects Section  */
+.projects-section {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0 4rem;
+  padding-top: 3rem;
+}
+.projects-title {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.6rem;
+  margin: 3rem auto;
+  color: var(--fifth-color);
+}
+.project-grid {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.project-item {
+  width: 28%;
+  height: 240px;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 3px solid var(--fifth-color);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.project-item img {
+  border-radius: 0.9rem;
+  width: 100%;
+  max-width: 350px;
+  height: 160px;
+  filter: saturate(0);
+  transition: all 0.5s;
+}
+.project-item:hover {
+  background-color: var(--fifth-color);
+  transform: scale(1.05);
+}
+.project-item:hover img {
+  filter: saturate(1);
+}
+.project-title {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+/* Contact Section  */
+.contact-section {
+  background-color: var(--sub-secondary-color);
+  color: var(--primary--color);
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
+.contact-title {
+  color: var(--sixth-color);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem;
+  margin: 3rem 0;
+  position: relative;
+}
+.contact-title::before {
+  content: "Keep in touch";
+  position: absolute;
+  font-size: 1.3rem;
+  padding: 0 0.8rem;
+  right: 0;
+  left: 0;
+  top: 100%;
+  object-fit: cover;
+  z-index: 100;
+  width: max-content;
+  color: var(--sixth-color);
+}
+.contact-list_item {
+  justify-content: space-evenly;
+  align-items: center;
+}
+.contact-list_item .contact-item {
+  padding: 2rem;
+  margin: 1rem;
+  width: 35%;
+  height: 180px;
+  border: 1px solid var(--sixth-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.contact-list_item .contact-item:hover {
+  box-shadow: 0 0 10px 1px var(--sixth-color);
+}
+.contact-item__inner {
+  color: var(--primary-color);
+  text-align: center;
+}
+.contact-item__inner i,
+span {
+  color: var(--sixth-color);
+  font-size: 1.5rem;
+  padding-bottom: 30px;
+}
+.contact-item__inner p {
+  color: var(--primary-color);
+}
+.contact-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Scroll Top Btn */
+.scroll_top-btn {
+  position: fixed;
+  z-index: 99999;
+  bottom: 30px;
+  right: 40px;
+  padding: 10px;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  border: 4px solid #af59ff;
+  transition: all 0.3s;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.scroll_top-btn.active {
+  opacity: 1;
+  transform: scale(1);
+}
+.scroll_top-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 576px) {
+  .navbar {
+    padding-right: 0;
+    padding-left: 0;
+    justify-content: space-between;
+  }
+  .navbar .navbar-logo {
+    padding-left: 1rem;
+  }
+  .navbar .navbar-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    display: none;
+  }
+  .navbar .navbar-menu.active {
+    border-top: 1px solid var(--secondary-color);
+  }
+  .navbar .navbar-menu.active {
+    display: flex;
+    align-items: flex-end;
+  }
+  .navbar .navbar-menu.active .navbar-link {
+    border: 2px solid;
+  }
+
+  .navbar .navbar-menu .navbar-link {
+    width: 30%;
+    color: var(--secondary-color);
+    padding: 0;
+    animation: MoveIn 0.5s alternate;
+  }
+  @keyframes MoveIn {
+    0% {
+      transform: translateX(150px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .navbar .navbar-menu .navbar-link a {
+    width: 100%;
+  }
+
+  .navbar.active .navbar-menu .navbar-link {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+  }
+  .navbar.active .navbar-menu.active .navbar-link {
+    width: 100%;
+    background-color: var(--navbar-color);
+    animation: FadeIn 0.5s alternate;
+  }
+  @keyframes FadeIn {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .navbar.active .navbar-logo a,
+  .navbar.active .navbar-menu li a {
+    width: 100%;
+  }
+
+  .navbar-menu_open-btn {
+    display: flex;
+  }
+  .navbar-menu_open-btn.active {
+    color: var(--fourth-color);
+  }
+  .profile_description {
+    text-align: center;
+    margin: 0;
+  }
+  .about-description {
+    flex-direction: column;
+  }
+  .about__left {
+    width: auto;
+  }
+  .about__right {
+    width: 85%;
+    margin-top: 3.5rem;
+  }
+  .skill-list .skill-item {
+    width: 100%;
+    min-width: 300px;
+  }
+  .project-item {
+    width: 100%;
+  }
+  .contact-list_item .contact-item {
+    width: 100%;
+    min-width: 350px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .navbar {
+    padding-right: 0;
+  }
+  .navbar .navbar-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    display: none;
+  }
+  .navbar .navbar-menu.active {
+    border-top: 1px solid var(--secondary-color);
+  }
+  .navbar .navbar-menu.active {
+    display: flex;
+    align-items: flex-end;
+  }
+  .navbar .navbar-menu.active .navbar-link {
+    border: 2px solid;
+  }
+  .navbar .navbar-menu .navbar-link {
+    width: 30%;
+    color: var(--secondary-color);
+    padding: 0;
+  }
+  .navbar .navbar-menu .navbar-link a {
+    width: 100%;
+  }
+
+  .navbar.active .navbar-menu .navbar-link {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+  }
+  .navbar.active .navbar-menu.active .navbar-link {
+    width: 100%;
+    background-color: var(--navbar-color);
+  }
+  .navbar.active .navbar-logo a,
+  .navbar.active .navbar-menu li a {
+    width: 100%;
+  }
+  .navbar-menu_open-btn {
+    display: flex;
+  }
+  .about-description {
+    flex-direction: column;
+  }
+  .about__right {
+    width: 100%;
+    margin-top: 3.5rem;
+  }
+  .skill-list .skill-item {
+    width: 100%;
+  }
+  .project-item {
+    width: 400px;
+    min-width: 280px;
+  }
+  .contact-list_item .contact-item {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .navbar {
+    padding-right: 0;
+  }
+  .navbar .navbar-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    display: none;
+  }
+  .navbar .navbar-menu.active {
+    border-top: 1px solid var(--secondary-color);
+  }
+  .navbar .navbar-menu.active {
+    display: flex;
+    align-items: flex-end;
+  }
+  .navbar .navbar-menu.active .navbar-link {
+    border: 2px solid;
+  }
+  .navbar .navbar-menu .navbar-link {
+    width: 30%;
+    color: var(--secondary-color);
+    padding: 0;
+  }
+
+  .navbar .navbar-menu .navbar-link a {
+    width: 100%;
+  }
+  .navbar.active .navbar-menu .navbar-link {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+  }
+  .navbar.active .navbar-menu.active .navbar-link {
+    width: 100%;
+    background-color: var(--navbar-color);
+  }
+  .navbar.active .navbar-logo a,
+  .navbar.active .navbar-menu li a {
+    width: 100%;
+  }
+
+  .navbar-menu_open-btn {
+    display: flex;
+  }
+  .about-description {
+    flex-direction: column;
+  }
+  .about__right {
+    width: 100%;
+    margin-top: 3.5rem;
+  }
+  .skill-list .skill-item {
+    width: 42%;
+    height: 300px;
+  }
+  .project-item {
+    width: 45%;
+  }
+  .contact-list_item .contact-item {
+    width: 45%;
+  }
+}
+/* tren phan nay responsive navbar */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .skill-list .skill-item {
+    width: 42%;
+    height: 300px;
+  }
+  .project-item {
+    width: 45%;
+  }
+  .contact-list_item .contact-item {
+    width: 45%;
+  }
+}

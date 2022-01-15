@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Ubuntu:wght@300;400;500;700&display=swap");
+  </style>
+  <link href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./main.css" />
+  <script scr="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <div class="loading">
+    <div class="spinner"></div>
+  </div>
+  <div class="main-page">
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="#home"> Portfolio. </a>
+      </div>
+      <ul class="navbar-menu">
+        <li class="navbar-link"><a href="#home">Home</a></li>
+        <li class="navbar-link"><a href="#about">About</a></li>
+        <li class="navbar-link"><a href="#knowledge">Knowledge</a></li>
+        <li class="navbar-link"><a href="#projects">Projects</a></li>
+        <li class="navbar-link"><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="navbar-menu_open-btn"><i class="fas fa-bars"></i></div>
+    </nav>
+    <div class="main-container">
+      <div id="home" class="section home-section">
+        <div class="profile_description">
+          <div class="profile_text-1">Hello, My name is</div>
+          <div class="profile_text-2">Nguyen Dang To</div>
+          <div class="profile_text-3">Web Designer & Developer</div>
+        </div>
+      </div>
+      <div id="about" class="section about-section">
+        <div class="about-title">About me</div>
+        <div class="about-description">
+          <div class="about__left">
+            <div class="about__img-container">
+              <img class="about__img" src="./assets/imgs/anhthe.png" />
+            </div>
+          </div>
+          <div class="about__right">
+            <div class="about_text-1">
+              My name is <span>Nguyen Dang To</span>
+            </div>
+            <br>
+            <div class="about_text-2">
+              I am a student at University of Information Technology in Ho Chi Minh City.
+            </div>
+            <br>
+            <div class="about_text-1">
+              <span>Career goals:</span>
+            </div>
+            <br>
+            <div class="about_text-2">
+              As a person with good logical thinking and creativity, I aspire to become one of the programmers who bring
+              optimal technology solutions to customers. At the same time, I want to improve my professional and
+              professional skills and become a fullstack developer
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="knowledge" class="section knowledge-section">
+        <h2 class="skill-title">Some of my Skills</h2>
+        <div class="skill-list">
+          <div class="skill-item">
+            <img src="./assets/imgs/html_logo.png" class="logo" id="html-logo">
+            <img src="./assets/imgs/css_logo.png" class="logo" id="css-logo">
+            <div class="skill-item__title">HTML, CSS</div>
+            <div class="skill-item__description">Have knowledge about HTML and CSS. I also have learned about HTML5,
+              the latest specification of the HTML language and CSS3 is a latest standard of CSS</div>
+          </div>
+          <div class="skill-item">
+            <img src="./assets/imgs/bootstrap_logo.png" class="logo" id="bootstrap-logo">
+            <img src="./assets/imgs/sass_logo.svg" class="logo" id="sass-logo">
+            <div class="skill-item__title">Bootstrap, SASS</div>
+            <div class="skill-item__description">Knowing CSS is not enough. So i learned about bootstrap to build fast,
+              responsive sites with Bootstrap.
+              Moreover, i have learned about SASS to work in the company.
+            </div>
+          </div>
+          <div class="skill-item">
+            <img src="./assets/imgs/javascript_logo.png" class="logo" id="js-logo">
+            <img src="./assets/imgs/jquery_logo.png" class="logo" id="jquery-logo">
+            <div class="skill-item__title">Javascript, Jquery</div>
+            <div class="skill-item__description">It's impossible for a FrontEnd Developer not to know about JavaScript
+              and
+              jQuery - one of the most widely used JavaScript libraries in the world.</div>
+          </div>
+          <div class="skill-item">
+            <img src="./assets/imgs/react_logo.png" class="logo" id="react-logo">
+            <div class="skill-item__title">React (still learning) </div>
+            <div class="skill-item__description"> React is a popular JavaScript library for building reusable,
+              component-driven user interfaces for web pages or applications. </div>
+          </div>
+        </div>
+      </div>
+      <div id="projects" class="section projects-section">
+        <h2 class="projects-title">These are some of my projects</h2>
+        <div class="project-grid">
+          <a class="project-item" href="https://nguyendangto.github.io/TheBand/" target="_blank">
+            <img src="./assets/imgs/theband.png" />
+            <div class="project-title">The Band</div>
+          </a>
+          <a class="project-item" href="https://nguyendangto.github.io/Amazon/" target="_blank">
+            <img src="./assets/imgs/amazon.png" />
+            <div class="project-title">Amazon</div>
+          </a>
+          <a class="project-item" href="https://nguyendangto.github.io/Discord-Clone/" target="_blank">
+            <img src="./assets/imgs/discord.png" />
+            <div class="project-title">Discord</div>
+          </a>
+          <a class="project-item" href="https://nguyendangto.github.io/music-player/" target="_blank">
+            <img src="./assets/imgs/musicplayer.png" />
+            <div class="project-title">Music Player</div>
+          </a>
+          <a class="project-item" href="https://codepen.io/nguyendangto/pen/MWvXxBr" target="_blank">
+            <img src="./assets/imgs/JsDocs.png" />
+            <div class="project-title">JS Documentation</div>
+          </a>
+          <a class="project-item" href="" target="_blank">
+            <img src="./assets/imgs/" />
+            <div class="project-title">CountDown(doing...)</div>
+          </a>
+        </div>
+      </div>
+      <div id="contact" class="section contact-section">
+        <h2 class="contact-title">Contact</h2>
+        <div class="row contact-list_item">
+
+          <div class="contact-item">
+            <div class="contact-item__inner">
+              <i class="fas fa-phone"></i>
+              <span>Phone</span>
+              <p>0782-776-322</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__inner">
+              <i class="fas fa-envelope"></i>
+              <span>Email</span>
+              <p>nguyendangto2502@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__inner">
+              <a href="https://www.facebook.com/profile.php?id=100025393878308" target="_blank">
+                <i class="fab fa-facebook-square"></i>
+                <span>Facebook</span>
+                <p>https://www.facebook.com/profile.php?id=100025393878308</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__inner">
+              <i class="fas fa-map-marked-alt"></i>
+              <span>Address</span>
+              <p>Thu Duc, Ho Chi Minh City, Viet Nam</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__inner">
+              <a href="https://www.linkedin.com/in/nguyen-dang-to-5a9263229/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+                <p>https://www.linkedin.com/in/nguyen-dang-to-5a9263229/</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__inner">
+              <a href="https://github.com/NguyenDangTo" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>Github</span>
+                <p>https://github.com/NguyenDangTo</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll_top-btn">
+      <a href="#home">
+        <i class="fa fa-arrow-up"></i>
+      </a>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
